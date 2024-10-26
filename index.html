@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost IT -  Development Team</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+    --primary-color: #6366f1;
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --animation-timing: 0.3s ease;
+}
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif; /* Apply font */
+    font-weight: 700; /* Font weight */
+    color: #ffffff; /* Text color */
+    transition: color 0.3s, text-shadow 0.3s; /* Transition for color and shadow */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Hover color */
+    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff; /* Glow effect */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-bg);
+    color: #e2e8f0;
+}
+
+
+
+.navbar {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all var(--animation-timing);
+}
+
+.navbar-scrolled {
+    padding: 0.5rem 0;
+    background: rgba(15, 23, 42, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.gradient-text {
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.card {
+    background: var(--card-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--animation-timing);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: all var(--animation-timing);
+}
+
+.service-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+    background: rgba(99, 102, 241, 0.2);
+}
+
+
+.team-member-img {
+    border: 4px solid var(--primary-color);
+    transition: all var(--animation-timing);
+}
+
+.team-member-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--animation-timing);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.social-link {
+    color: #e2e8f0;
+    transition: all var(--animation-timing);
+    display: inline-block;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+    transform: rotate(360deg) scale(1.2);
+}
+
+.nav-link {
+    position: relative;
+    transition: all var(--animation-timing);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--primary-color);
+    transition: width var(--animation-timing);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.form-control {
+    background-color: rgba(30, 41, 59, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+    transition: all var(--animation-timing);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+    transform: translateY(-2px);
+}
+
+.form-control::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.stats-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--animation-timing);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1);
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .card:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(
+        90deg,
+        var(--card-bg) 25%,
+        rgba(99, 102, 241, 0.1) 50%,
+        var(--card-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+/* General styles */
+.title {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.gradient-text {
+    display: inline-block;
+    background: linear-gradient(90deg, #6d46c9, #e75188);
+    background-clip: text;
+    color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 8px rgba(199, 179, 245, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 12px rgba(115, 7, 238, 0.9);
+    }
+}
+.card h4 {
+      color: rgb(186, 186, 252); /* Set the color to blue */
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+<img src="/ghost_it.png" alt="Hero Image" class="img-fluid rounded-4 shadow-lg" style="width: 200px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+                     <li class="nav-item"><a class="nav-link px-3" href="https://hosting.ghost-ph.cloud/login">WEBSITE HOSTING</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4 title">
+                        We Build <span class="gradient-text">Digital Excellence</span>
+                    </h1>
+                    <p class="lead mb-4 text-light-emphasis subtitle">
+                        Transforming ideas into powerful digital solutions with cutting-edge technology and innovative design.
+                    </p>                    
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Get Started</button>
+                        <button class="btn btn-outline-light" onclick="document.getElementById('services').scrollIntoView()">Learn More</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/ghost_it.png" alt="Hero Image" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-card rounded-4 p-4 text-center">
+                        <h3 class="gradient-text fw-bold">100+</h3>
+                        <p class="mb-0">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card rounded-4 p-4 text-center">
+                        <h3 class="gradient-text fw-bold">50+</h3>
+                        <p class="mb-0">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card rounded-4 p-4 text-center">
+                        <h3 class="gradient-text fw-bold">5+</h3>
+                        <p class="mb-0">Team Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card rounded-4 p-4 text-center">
+                        <h3 class="gradient-text fw-bold">24/7</h3>
+                        <p class="mb-0">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text fw-bold">Our Services</h2>
+                <p class="text-light-emphasis">Comprehensive solutions for your digital needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-code text-primary fa-lg"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p class="text-light-emphasis">Custom websites and web applications using cutting-edge technologies.</p>
+                        <a href="/learn.html" class="text-primary text-decoration-none mt-auto">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt text-primary fa-lg"></i>
+                        </div>
+                        <h4>Mobile Development</h4>
+                        <p class="text-light-emphasis">Native and cross-platform mobile applications for iOS and Android.</p>
+                        <a href="#contact" class="text-primary text-decoration-none mt-auto">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud text-primary fa-lg"></i>
+                        </div>
+                        <h4>Cloud Solutions</h4>
+                        <p class="text-light-emphasis">Scalable cloud infrastructure and DevOps services.</p>
+                        <a href="#contact" class="text-primary text-decoration-none mt-auto">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5" id="team">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text fw-bold">Meet Our Team</h2>
+                <p class="text-light-emphasis">The talented people behind our success</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center p-4">
+                        <img src="/me.jpg" class="rounded-circle mx-auto team-member-img" alt="Team Member">
+                        <h4 class="gradient-text">Dev Adonis Jr S.</h4>
+                        <p class="text-primary mb-2">Lead Developer</p>
+                        <p class="text-light-emphasis">Software Developer/.NET DEV</p>
+                        <div class="d-flex justify-content-center gap-3 mt-3">
+                            <a href="https://github.com/Bucky-26" class="social-link""><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/Buckyy26" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center p-4">
+                        <img src="/xynn.jpg" class="rounded-circle mx-auto team-member-img" alt="Team Member">
+                        <h4 class="gradient-text">Xynn Almeyda</h4>
+                        <p class="text-primary mb-2">SOC Analyst.</p>
+                        <p class="text-light-emphasis">Security automation/ AI Engr.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-3">
+                            <a href="https://github.com/XYNnAlmeyda class=" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61558580057059" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center p-4">
+                        <img src="/profile.png" class="rounded-circle mx-auto team-member-img" alt="Team Member">
+                        <h4 class="gradient-text">Christian Vhel</h4>
+                        <p class="text-primary mb-2">Backend Developer</p>
+                        <p class="text-light-emphasis">Expert in Game Dev and Backend.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-3">
+                            <a href="https://github.com/githubNiPoring" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/lavides.christian.062003" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                     <div class="col-lg-4 col-md-6">
+                     <div class="card text-center p-4">
+                    <img src="/king.jpg" class="rounded-circle mx-auto team-member-img" alt="Team Member">
+                    <h4 class="gradient-text">King Benedict</h4>
+                    <p class="text-primary mb-2">UI/UX Designer/ Dev</p>
+                    <p class="text-light-emphasis">Expert in Python and FIGMA.</p>
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <a href="#" class=""><i class="fab fa-github"></i></a>
+                        <a href="#" class="https://www.facebook.com/benedictking.lagaya.7"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center p-4">
+                    <img src="/charles.jpg" class="rounded-circle mx-auto team-member-img" alt="Team Member">
+                    <h4 class="gradient-text">Charles Mejia</h4>
+                    <p class="text-primary mb-2">Computer Engr.</p>
+                    <p class="text-light-emphasis">Expert in Arduino/ Backend dev.</p>
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <a href="#" class="fab fa-github"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/charles.mejia.5686" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h2 class="gradient-text fw-bold mb-4">Get in Touch</h2>
+                    <p class="text-light-emphasis mb-4">Ready to start your project? Contact us for a free consultation.</p>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
