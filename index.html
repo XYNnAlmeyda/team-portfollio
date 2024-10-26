@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="script.js">
     <title>Ghost IT -  Development Team</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
     --primary-color: #6366f1;
@@ -16,15 +18,16 @@
     --animation-timing: 0.3s ease;
 }
 .navbar-nav .nav-link {
-    font-family: 'Montserrat', sans-serif; /* Apply font */
-    font-weight: 700; /* Font weight */
-    color: #ffffff; /* Text color */
-    transition: color 0.3s, text-shadow 0.3s; /* Transition for color and shadow */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #007bff; /* Hover color */
-    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff; /* Glow effect */
+    color: #007bff; 
+    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+    transform: scale(1.1);
 }
 
 html {
@@ -276,7 +279,7 @@ body {
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
 }
-/* General styles */
+
 .title {
     opacity: 0;
     transform: translateY(-20px);
@@ -318,17 +321,32 @@ body {
     100% {
         text-shadow: 0 0 12px rgba(115, 7, 238, 0.9);
     }
-}
+    }
 .card h4 {
-      color: rgb(186, 186, 252); /* Set the color to blue */
-}
+      color: rgb(186, 186, 252);
+    }
+body {
+    font-family: 'Roboto', sans-serif; /* Apply the font to the body or specific elements */
+    }
+.gradient-text {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Example gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* This creates the gradient text effect */
+    }
+    .text-primary {
+       color: #007bff; /* Primary text color */
+    }
+.text-light-emphasis {
+       color: rgba(255, 255, 255, 0.7); /* Light emphasis color */
+    }
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-<img src="/ghost_it.png" alt="Hero Image" class="img-fluid rounded-4 shadow-lg" style="width: 200px; height: auto;">
+<img src="/822o5z4rodm2onht6r.png" alt="Hero Image" class="img-fluid rounded-4 shadow-lg" style="width: 200px; height: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -345,7 +363,6 @@ body {
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero d-flex align-items-center" id="home">
         <div class="container">
             <div class="row align-items-center">
@@ -373,13 +390,13 @@ body {
             <div class="row g-4">
                 <div class="col-md-3 col-6">
                     <div class="stats-card rounded-4 p-4 text-center">
-                        <h3 class="gradient-text fw-bold">100+</h3>
+                        <h3 class="gradient-text fw-bold">30+</h3>
                         <p class="mb-0">Projects Completed</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stats-card rounded-4 p-4 text-center">
-                        <h3 class="gradient-text fw-bold">50+</h3>
+                        <h3 class="gradient-text fw-bold">30+</h3>
                         <p class="mb-0">Happy Clients</p>
                     </div>
                 </div>
@@ -424,7 +441,7 @@ body {
                         </div>
                         <h4>Mobile Development</h4>
                         <p class="text-light-emphasis">Native and cross-platform mobile applications for iOS and Android.</p>
-                        <a href="#contact" class="text-primary text-decoration-none mt-auto">Learn More →</a>
+                        <a href="/mobiledev.html" class="text-primary text-decoration-none mt-auto">Learn More →</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -434,7 +451,7 @@ body {
                         </div>
                         <h4>Cloud Solutions</h4>
                         <p class="text-light-emphasis">Scalable cloud infrastructure and DevOps services.</p>
-                        <a href="#contact" class="text-primary text-decoration-none mt-auto">Learn More →</a>
+                        <a href="/Cloud.html" class="text-primary text-decoration-none mt-auto">Learn More →</a>
                     </div>
                 </div>
             </div>
@@ -477,8 +494,8 @@ body {
                     <div class="card text-center p-4">
                         <img src="/profile.png" class="rounded-circle mx-auto team-member-img" alt="Team Member">
                         <h4 class="gradient-text">Christian Vhel</h4>
-                        <p class="text-primary mb-2">Backend Developer</p>
-                        <p class="text-light-emphasis">Expert in Game Dev and Backend.</p>
+                        <p class="text-primary mb-2">Game Developer</p>
+                        <p class="text-light-emphasis">GameEngines/ Backend.</p>
                         <div class="d-flex justify-content-center gap-3 mt-3">
                             <a href="https://github.com/githubNiPoring" class="social-link"><i class="fab fa-github"></i></a>
                             <a href="https://www.facebook.com/lavides.christian.062003" class="social-link"><i class="fab fa-facebook"></i></a>
@@ -493,7 +510,7 @@ body {
                     <p class="text-primary mb-2">UI/UX Designer/ Dev</p>
                     <p class="text-light-emphasis">Expert in Python and FIGMA.</p>
                     <div class="d-flex justify-content-center gap-3 mt-3">
-                        <a href="#" class=""><i class="fab fa-github"></i></a>
+                        <a href="#" class="#"><i class="fab fa-github"></i></a>
                         <a href="#" class="https://www.facebook.com/benedictking.lagaya.7"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
@@ -525,3 +542,9 @@ body {
                         </div>
                         <div class="mb-3">
                             <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </form>
+                </div>                
